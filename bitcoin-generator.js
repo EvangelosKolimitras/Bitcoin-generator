@@ -9,6 +9,22 @@ let euro = document.querySelectorAll(".currency")[0];
 let dollar = document.querySelectorAll(".currency")[1];
 let pound = document.querySelectorAll(".currency")[2];
 
+let btn = document.getElementsByClassName('btn');
+for(let i = 0; i < btn.length; i++){
+    let button = btn[i];
+    button.addEventListener(
+        'click',
+        () => {
+            if(button.classList.contains('active')){
+                button.classList.remove('active')
+                console.log(button);
+            }else{
+                button.classList.add('active')
+            }
+        }
+    );
+}
+
 xhr.onreadystatechange = () => {
     if(xhr.readyState == 4 && xhr.status == 200) {
         const data = JSON.parse(xhr.responseText);
@@ -29,12 +45,6 @@ xhr.onreadystatechange = () => {
             'click',
             () => {
                 bitcoin_current_value.innerHTML = e.rate + " " + e.symbol;
-                if(euro.className === 'currency') {
-                   euro.className += ' active';
-                }else {
-                    euro.classList.remove('active');
-                    euro.className === ' currency';
-                }
             }
         );
         
@@ -42,12 +52,6 @@ xhr.onreadystatechange = () => {
             'click',
             () => {
                 bitcoin_current_value.innerHTML = d.symbol + " " + d.rate;
-                if(dollar.className === 'currency') {
-                    dollar.className += ' active';
-                 }else {
-                     dollar.classList.remove('active');
-                     dollar.className === ' currency';
-                 }
             }
         );
         
@@ -55,12 +59,6 @@ xhr.onreadystatechange = () => {
             'click',
             () => {
                 bitcoin_current_value.innerHTML = p.symbol + " " + p.rate;
-                if(pound.className === 'currency') {
-                    pound.className += ' active';
-                 }else {
-                     pound.classList.remove('active');
-                     pound.className === ' currency';
-                 }
             }
         );
         
