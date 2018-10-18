@@ -38,6 +38,10 @@
             border: 1px solid #999;
             padding: 10px;
             border-radius: 5px;
+            outline: none;
+        }
+        .active {
+            background: lightgreen;
         }
         .currency:hover {
             cursor: pointer;
@@ -51,9 +55,9 @@
     <span id="bitcoin_value"></span>
 
     <div id="currencries">
-        <span class="currency"></span>
-        <span class="currency"></span>
-        <span class="currency"></span>    
+        <button class="currency"></button>
+        <button class="currency"></button>
+        <button class="currency"></button>    
     </div>
     
     <script src="bitcoin-generator.js"></script>

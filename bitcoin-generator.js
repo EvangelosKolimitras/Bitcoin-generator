@@ -29,20 +29,41 @@ xhr.onreadystatechange = () => {
             'click',
             () => {
                 bitcoin_current_value.innerHTML = e.rate + " " + e.symbol;
+                if(euro.className === 'currency') {
+                   euro.className += ' active';
+                }else {
+                    euro.classList.remove('active');
+                    euro.className === ' currency';
+                }
             }
         );
+        
         dollar.addEventListener(
             'click',
             () => {
                 bitcoin_current_value.innerHTML = d.symbol + " " + d.rate;
+                if(dollar.className === 'currency') {
+                    dollar.className += ' active';
+                 }else {
+                     dollar.classList.remove('active');
+                     dollar.className === ' currency';
+                 }
             }
         );
+        
         pound.addEventListener(
             'click',
             () => {
                 bitcoin_current_value.innerHTML = p.symbol + " " + p.rate;
+                if(pound.className === 'currency') {
+                    pound.className += ' active';
+                 }else {
+                     pound.classList.remove('active');
+                     pound.className === ' currency';
+                 }
             }
         );
+        
     }
 }
 
