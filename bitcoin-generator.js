@@ -3,27 +3,31 @@ const xhr = new XMLHttpRequest();
 const disc = document.querySelector('#disclaimer');
 const bitcoin_current_value = document.querySelector('#bitcoin_value');
 
-const crnc = document.querySelector("#currencies");
-
 let euro = document.querySelectorAll(".currency")[0];
 let dollar = document.querySelectorAll(".currency")[1];
 let pound = document.querySelectorAll(".currency")[2];
 
-let btn = document.getElementsByClassName('btn');
-for(let i = 0; i < btn.length; i++){
-    let button = btn[i];
-    button.addEventListener(
-        'click',
-        () => {
-            if(button.classList.contains('active')){
-                button.classList.remove('active')
-                console.log(button);
-            }else{
-                button.classList.add('active')
+const crnc = document.querySelector("#currencies");
+let buttons = crnc.querySelectorAll('button');
+
+console.log(buttons);console.log(typeof(buttons));
+buttons.forEach(
+    (button) => {
+        button.addEventListener(
+            'click',
+            () => {
+                if(button.classList.contains('active')){
+                    button.classList.remove('active')
+                    console.log(button);
+                }else{
+                    button.classList.add('active');
+                    console.log(button)
+                }
             }
-        }
-    );
-}
+        );
+    }
+);
+
 
 xhr.onreadystatechange = () => {
     if(xhr.readyState == 4 && xhr.status == 200) {
