@@ -19,6 +19,29 @@
             width: 50%;
             font-size: 2.5em;
         }
+        #btn:hover {
+            cursor: pointer;
+            background-color: #999;
+            color: #fff;
+        }
+        #bitcoin_value {
+            display: block;
+            height: 50px;
+        }
+        #currencries {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .currency {
+            margin: 0 15px;
+            border: 1px solid #999;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .currency:hover {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -26,6 +49,13 @@
     <p id="disclaimer"></p>
     <hr style="width:50%;">
     <span id="bitcoin_value"></span>
+
+    <div id="currencries">
+        <span class="currency"></span>
+        <span class="currency"></span>
+        <span class="currency"></span>    
+    </div>
+    
     <script src="bitcoin-generator.js"></script>
 </body>
 </html>
