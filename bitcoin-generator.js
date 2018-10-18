@@ -11,22 +11,18 @@ const crnc = document.querySelector("#currencies");
 let buttons = crnc.querySelectorAll('button');
 
 console.log(buttons);console.log(typeof(buttons));
-buttons.forEach(
-    (button) => {
-        button.addEventListener(
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener(
             'click',
             () => {
-                if(button.classList.contains('active')){
-                    button.classList.remove('active')
-                    console.log(button);
-                }else{
-                    button.classList.add('active');
-                    console.log(button)
+                var c = 0;
+                while (c < buttons.length) {
+                    buttons[c++].className = 'currency';
                 }
+                buttons[i].className = 'currency active';
             }
-        );
-    }
-);
+    );
+}
 
 
 xhr.onreadystatechange = () => {
